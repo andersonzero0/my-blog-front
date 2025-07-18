@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+.css-pya3dl {
+  width: 20px;
+  height: 20px;
+  color: rgb(29, 155, 240);
+  fill: rgb(29, 155, 240);
+}
+
+/* Para code blocks (blocos de código) */
+pre code {
+  font-size: 0.875rem; /* 14px */
+}
+
+/* Para código inline */
+code {
+  font-size: 0.875rem; /* 14px */
+}
+
+/* Ou usando classes específicas do highlight.js */
+.hljs {
+  font-size: 0.675rem; /* 14px */
+}
+
+/* Para maior especificidade */
+pre.hljs {
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.4;
+}

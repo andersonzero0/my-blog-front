@@ -1,0 +1,13 @@
+<div class="flex flex-col gap-4">
+  <header>
+    <a [routerLink]="['/blogs']" class="text-blue-500 font-bold">Voltar</a>
+  </header>
+
+  @if (blogPostQuery && blogPostQuery.isLoading()) {
+    <app-loading />
+  }
+
+  @if (blogPostQuery && blogPostQuery.isSuccess()) {
+    <app-card-blog [post]="blogPostQuery.data()!" [body]="true"></app-card-blog>
+  }
+</div>

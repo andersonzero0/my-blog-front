@@ -1,0 +1,25 @@
+@if (blogPostsQuery && blogPostsQuery.isLoading()) {
+  <app-loading />
+}
+
+@if (blogPostsQuery && blogPostsQuery.isSuccess()) {
+  <div class="flex flex-col gap-4" #scrollContainer>
+    @for (item of allPosts; track item.id) {
+      <a [routerLink]="`/blogs/${item.number}`">
+       <app-card-blog [post]="item"></app-card-blog>
+      </a>
+    }
+    
+    @if (blogPostsQuery.isFetchingNextPage()) {
+      <div class="flex justify-center py-4">
+        <app-loading />
+      </div>
+    }
+    
+    @if (!blogPostsQuery.hasNextPage() && allPosts.length > 0) {
+      <div class="text-center py-4 text-gray-500">
+        Não há mais posts para carregar
+      </div>
+    }
+  </div>
+}
