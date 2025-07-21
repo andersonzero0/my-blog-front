@@ -9,5 +9,21 @@
 
   @if (blogPostQuery && blogPostQuery.isSuccess()) {
     <app-card-blog [post]="blogPostQuery.data()!" [body]="true"></app-card-blog>
+    <script type="module" src="https://esm.sh/giscus"></script>
+    <giscus-widget
+      id="comments"
+      repo="andersonzero0/my-blog-front"
+      repoid="R_kgDOPO9ujQ"
+      category="Announcements"
+      categoryid="DIC_kwDOPO9ujc4CtJ5G"
+      mapping="pathname"
+      term="Welcome to giscus!"
+      reactionsenabled="1"
+      emitmetadata="0"
+      inputposition="bottom"
+      theme="light"
+      lang="pt"
+      loading="lazy"
+    ></giscus-widget>
   }
 </div>

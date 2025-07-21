@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CardBlogComponent } from '../../components/card-blog/card-blog.component';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { BlogsService, GitHubIssue } from '../../services/blogs.service';
@@ -10,6 +10,7 @@ import { LoadingComponent } from "../../components/loading/loading.component";
   imports: [CardBlogComponent, RouterLink, LoadingComponent],
   templateUrl: './blog-details.component.html',
   providers: [BlogsService],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class BlogDetailsComponent {
   id: number | null = null;

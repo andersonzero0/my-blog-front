@@ -39,8 +39,8 @@ interface BlogPostsParams {
 })
 export class BlogsService {
   private readonly githubApiUrl = 'https://api.github.com/repos';
-  private readonly owner = 'facebook';
-  private readonly repo = 'react';
+  private readonly owner = 'andersonzero0';
+  private readonly repo = 'my-blog-front';
 
   private issueNumber: number | null = null;
 

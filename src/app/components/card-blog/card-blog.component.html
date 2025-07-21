@@ -10,7 +10,7 @@
     </div>
 
     @if (post.labels && post.labels.length > 0) {
-      <p class="text-sm font-bold p-1 rounded-sm" [style.background-color]="'#' + post.labels[0].color">{{post.labels[0].name}}</p>
+      <p class="text-sm font-bold px-2 py-1 rounded-sm flex justify-center items-center" [style.background-color]="'#' + post.labels[0].color" [style.color]="getLightColor(post.labels[0].color)">{{post.labels[0].name}}</p>
     }
   </header>
 
@@ -18,8 +18,13 @@
     <p class="font-bold text-xl">{{post.title}} <span class="text-blue-500">#{{post.number}}</span></p>
   </div>
 
+  @if(!body) {
+    <a class="text-blue-500 font-semibold" [routerLink]="`/blogs/${post.number}`">Ler mais</a>
+  }
+
+
   @if (body) {
-    <div class="prose prose-sm max-w-none markdown-body">
+    <div class="prose prose-sm max-w-none markdown-body [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:list-decimal [&_ol]:pl-6 [&_li]:my-1">
       <markdown
         lineNumbers
         lineHighlight

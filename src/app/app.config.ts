@@ -21,9 +21,9 @@ export const appConfig: ApplicationConfig = {
         provide: MARKED_OPTIONS,
         useValue: {
           gfm: true,
-          breaks: true,
+          breaks: false,
           pedantic: false,
-        
+          silent: false,
         }
       },
       markedExtensions: [gfmHeadingId(), markedHighlight({
